@@ -9,13 +9,13 @@ base_url = "http://api.openweathermap.org/data/2.5/weather?"
 while True:
 
 	# Take user input for city
-	city_name = input("Enter 'quit' to exit the program. \nEnter City name or ZIP Code: ")
+	location = input("Enter 'quit' to exit the program. \nEnter City name or ZIP Code: ")
 	#allow for user to input multiple locations or quit
-	if city_name == "quit":
+	if location == "quit":
 		break
 
 	# complete url address
-	complete_url = base_url + "appid=" + api_key + "&q=" + city_name
+	complete_url = base_url + "appid=" + api_key + "&q=" + location + ",US&units=imperial"
 
 	#Test Connection and print any errors
 	try:
@@ -67,15 +67,15 @@ while True:
 						str(city) +
 			"\nThe Current Weather is = " +
 						str(weather_description) +
-			"\nThe Temperature in Kelvin is = " +
+			"\nThe Temperature in Fahrenheit is = " +
 						str(current_temperature) +
-			"\nThe Temperature in Kelvin Feels Like = " +
+			"\nThe Temperature in Fahrenheit Feels Like = " +
 						str(feels_like) +
 			"\nThe Humidity Percentage is = " +
 						str(current_humidity) +
-			"\nThe Low Temperature Today in Kelvin is = " +
+			"\nThe Low Temperature Today in Fahrenheit is = " +
 						str(temp_min) +
-			"\nThe High Temperature Today in Kelvin is = " +
+			"\nThe High Temperature Today in Fahrenheit is = " +
 						str(temp_max) +
 						"\n\n")
 
